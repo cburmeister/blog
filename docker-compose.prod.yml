@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - 80:80
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  ghost:
+    environment:
+      - VIRTUAL_HOST=${HOST}
+      - VIRTUAL_PORT=2368
+    user: 0:1000

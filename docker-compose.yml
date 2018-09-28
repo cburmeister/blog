@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  ghost:
+    environment:
+      - url=http://${HOST}
+      - mail__transport=SMTP
+      - mail__options__service=${MAIL_SVC}
+      - mail__options__auth__user=${MAIL_USER}
+      - mail__options__auth__pass=${MAIL_PASS}
+    image: ghost
+    ports:
+      - 2368:2368
+    restart: always
+    user: 1000:1000
+    volumes:
+      - ghost-content:/var/lib/ghost/content
+  ghost-backup:
+    image: rija/ghost-backup
+    restart: always
+    volumes:
+      - ghost-content:/var/lib/ghost/content
+volumes:
+  ghost-content:
