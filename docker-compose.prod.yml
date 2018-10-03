@@ -6,6 +6,7 @@ services:
       - 80:80
     restart: always
     volumes:
+      - ./nginx/conf.d/proxy.conf:/etc/nginx/conf.d/proxy.conf:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
   ghost:
     environment:
