@@ -9,7 +9,7 @@ services:
       - mail__options__auth__pass=${MAIL_PASS}
     image: ghost
     ports:
-      - 2368:2368
+      - "2368:2368"
     restart: always
     user: 1000:1000
     volumes:

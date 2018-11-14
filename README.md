@@ -10,9 +10,10 @@ This is a deployment of [ghost](https://ghost.org/) and
 
 The following environment variables are *required*:
 
-| Name             | Purpose                                        |
-|------------------|------------------------------------------------|
-| `HOST`           | Hostname and port where `ghost` is accessible. |
+| Name                | Purpose                                        |
+|---------------------|------------------------------------------------|
+| `HOST`              | Hostname and port where `ghost` is accessible. |
+| `LETSENCRYPT_EMAIL` | Your email for use with Let's Encrypt.         |
 
 ### Mail
 
