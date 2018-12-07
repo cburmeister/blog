@@ -9,7 +9,10 @@ services:
       - "443:443"
     restart: always
     volumes:
-      - ./nginx/conf.d/proxy.conf:/etc/nginx/conf.d/proxy.conf:ro
+      - ./nginx/conf.d/cache.conf:/etc/nginx/conf.d/cache.conf
+      - ./nginx/proxy.conf:/etc/nginx/proxy.conf
+      - ./nginx/vhost.d/host:/etc/nginx/vhost.d/${HOST}
+      - ./nginx/vhost.d/host_location:/etc/nginx/vhost.d/${HOST}_location
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - certs:/etc/nginx/certs:ro
       - dhparam:/etc/nginx/dhparam

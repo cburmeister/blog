@@ -1,0 +1,1 @@
+add_header X-Proxy-Cache $upstream_cache_status;
