@@ -1,0 +1,6 @@
+bases:
+- ghost
+namespace: blog
+resources:
+- ingress.yaml
+- namespace.yaml
