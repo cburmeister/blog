@@ -1,0 +1,20 @@
+name: CI/CD
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set up kubectl
+      uses: matootie/dokube@v1.3.4
+      with:
+        personalAccessToken: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        clusterName: ${{ secrets.KUBE_CLUSTER_NAME }}
+    - name: Deploy
+      run: |
+        kubectl apply -k kustomize/environments/prod

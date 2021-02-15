@@ -1,0 +1,7 @@
+bases:
+- ../../../apps/ghost
+resources:
+- pvc.yaml
+patches:
+- add-volumes.yaml
+- set-env-variables.yaml
