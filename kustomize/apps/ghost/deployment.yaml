@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: ghost
-        image: ghost:3.41.5-alpine
+        image: ghost:3.42.6-alpine
         imagePullPolicy: Always
         ports:
         - name: http
