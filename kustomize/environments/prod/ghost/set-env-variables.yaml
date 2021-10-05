@@ -12,12 +12,14 @@ spec:
           value: https://coreyburmeister.com
         - name: mail__transport
           value: SMTP
+        - name: mail__options__auth__user
+          value: postmaster@mg.coreyburmeister.com
         - name: mail__options__service
           value: Mailgun
         - name: mail__options__host
           value: smtp.mailgun.org
         - name: mail__options__port
-          value: '587'
+          value: '465'
         envFrom:
         - secretRef:
             name: ghost-secrets
