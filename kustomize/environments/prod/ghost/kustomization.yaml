@@ -6,3 +6,4 @@ resources:
 patches:
 - add-volumes.yaml
 - set-env-variables.yaml
+- set-resources.yaml
